@@ -15,5 +15,6 @@ namespace TallerCRUDNETCORE.Models.DAL
         }
 
         public DbSet<Producto> Productos { get; set;  }
+        public DbSet<Proveedor> Proveedores { get; set; }
     }
 }
