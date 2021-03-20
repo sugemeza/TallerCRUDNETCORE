@@ -16,7 +16,6 @@ namespace TallerCRUDNETCORE.Models.Entidades
         [Required(ErrorMessage = "El campo nombre es obligatorio")]
         public string Nombre { get; set; }
 
-        [Column("existencia", )]
         public int Existencia { get; set; }
         public double FechaIngreso { get; set; }
         public double Precio { get; set; }

@@ -12,12 +12,8 @@ namespace TallerCRUDNETCORE.Models.DAL
         public DbContextProducto(DbContextOptions<DbContextProducto> options)
             : base(options)
         {
-
         }
 
         public DbSet<Producto> Productos { get; set;  }
-
-        //Llamar aquí la entidad de proveedores
-        //public DbSet<Proveedor> Proveedores { get; set; }
     }
 }
