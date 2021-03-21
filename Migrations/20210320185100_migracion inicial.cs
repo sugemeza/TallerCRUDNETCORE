@@ -7,6 +7,22 @@ namespace TallerCRUDNETCORE.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Proveedores",
+                columns: table => new
+                {
+                    ProveedorId = table.Column<int>(nullable: false).Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(nullable: true),
+                    PersonaContacto = table.Column<string>(nullable: true),
+                    Correo = table.Column<string>(nullable: true),
+                    Telefono = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Proveedores", proveedor => proveedor.ProveedorId);
+                }
+           );
+
+           migrationBuilder.CreateTable(
                 name: "Productos",
                 columns: table => new
                 {
@@ -20,12 +36,20 @@ namespace TallerCRUDNETCORE.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Productos", x => x.ProductoId);
-                });
+                    table.PrimaryKey("PK_Productos", producto => producto.ProductoId);
+                    table.ForeignKey("FK_Productos_ProveedorId",
+                                     producto => producto.ProveedorId,
+                                     "Proveedores",
+                                     "ProveedorId");
+                }
+            );
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Proveedores");
+
             migrationBuilder.DropTable(
                 name: "Productos");
         }
