@@ -27,12 +27,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Proveedores" asp-action="Index">Proveedores</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidad</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Compras">Compras</a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -55,4 +49,15 @@
     <script src="~/js/bootstrap-datepicker.min.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
+
+<style>
+    div {
+        height: 100%;
+        background: linear-gradient(rgba(68, 191, 184, 0.6), rgba(155, 89, 182, 0.3));
+    }
+
+    body {
+        font-family: montserrat, arial, verdana;
+    }
+</style>
 </html>
