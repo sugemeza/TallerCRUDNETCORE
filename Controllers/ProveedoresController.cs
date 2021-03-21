@@ -25,8 +25,8 @@ namespace TallerCRUDNETCORE.Controllers
             return View(await _context.Proveedores.ToListAsync());
         }
 
-        // GET: Proveedores/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: Proveedores/Detalles/5
+        public async Task<IActionResult> Detalles(int? id)
         {
             if (id == null)
             {
@@ -43,18 +43,18 @@ namespace TallerCRUDNETCORE.Controllers
             return View(proveedor);
         }
 
-        // GET: Proveedores/Create
-        public IActionResult Create()
+        // GET: Proveedores/Crear
+        public IActionResult Crear()
         {
             return View();
         }
 
-        // POST: Proveedores/Create
+        // POST: Proveedores/Crear
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProveedorId,Nit,Nombre,PersonaContacto,Correo,Telefono")] Proveedor proveedor)
+        public async Task<IActionResult> Crear([Bind("ProveedorId,Nit,Nombre,PersonaContacto,Correo,Telefono")] Proveedor proveedor)
         {
             var provedorExistente = await _context.Proveedores
                .FirstOrDefaultAsync(x => x.Nit == proveedor.Nit);
@@ -73,7 +73,7 @@ namespace TallerCRUDNETCORE.Controllers
         }
 
         // GET: Proveedores/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Editar(int? id)
         {
             if (id == null)
             {
@@ -88,12 +88,12 @@ namespace TallerCRUDNETCORE.Controllers
             return View(proveedor);
         }
 
-        // POST: Proveedores/Edit/5
+        // POST: Proveedores/Editar/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProveedorId,Nit,Nombre,PersonaContacto,Correo,Telefono")] Proveedor proveedor)
+        public async Task<IActionResult> Editar(int id, [Bind("ProveedorId,Nit,Nombre,PersonaContacto,Correo,Telefono")] Proveedor proveedor)
         {
             if (id != proveedor.ProveedorId)
             {
@@ -109,7 +109,7 @@ namespace TallerCRUDNETCORE.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProveedorExists(proveedor.ProveedorId))
+                    if (!ProveedorExiste(proveedor.ProveedorId))
                     {
                         return NotFound();
                     }
@@ -123,8 +123,8 @@ namespace TallerCRUDNETCORE.Controllers
             return View(proveedor);
         }
 
-        // GET: Proveedores/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // GET: Proveedores/Eliminar/5
+        public async Task<IActionResult> Eliminar(int? id)
         {
             if (id == null)
             {
@@ -141,10 +141,10 @@ namespace TallerCRUDNETCORE.Controllers
             return View(proveedor);
         }
 
-        // POST: Proveedores/Delete/5
-        [HttpPost, ActionName("Delete")]
+        // POST: Proveedores/Eliminar/5
+        [HttpPost, ActionName("Eliminar")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> EliminarConfirmado(int id)
         {
             var proveedor = await _context.Proveedores.FindAsync(id);
             _context.Proveedores.Remove(proveedor);
@@ -152,7 +152,7 @@ namespace TallerCRUDNETCORE.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProveedorExists(int id)
+        private bool ProveedorExiste(int id)
         {
             return _context.Proveedores.Any(e => e.ProveedorId == id);
         }
