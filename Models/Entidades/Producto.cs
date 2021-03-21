@@ -20,6 +20,8 @@ namespace TallerCRUDNETCORE.Models.Entidades
         public double FechaIngreso { get; set; }
         public double Precio { get; set; }
         public int ProveedorId { get; set; }
+        [ForeignKey("ProveedorId")]
+        public virtual Proveedor Proveedor { get; set; }
 
     }
 }

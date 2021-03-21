@@ -35,6 +35,7 @@ namespace TallerCRUDNETCORE.Controllers
 
             var producto = await _context.Productos
                 .FirstOrDefaultAsync(m => m.ProductoId == id);
+            _context.Entry(producto).Reference(x => x.Proveedor).Load();
             if (producto == null)
             {
                 return NotFound();
