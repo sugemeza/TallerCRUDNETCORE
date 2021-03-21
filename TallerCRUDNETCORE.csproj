@@ -5,8 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Abstracta\" />
-    <Folder Include="Models\Servicios\" />
+    <Compile Remove="Models\Abstracta\**" />
+    <Compile Remove="Models\Servicios\**" />
+    <Content Remove="Models\Abstracta\**" />
+    <Content Remove="Models\Servicios\**" />
+    <EmbeddedResource Remove="Models\Abstracta\**" />
+    <EmbeddedResource Remove="Models\Servicios\**" />
+    <None Remove="Models\Abstracta\**" />
+    <None Remove="Models\Servicios\**" />
   </ItemGroup>
 
   <ItemGroup>

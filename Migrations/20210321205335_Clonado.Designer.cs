@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TallerCRUDNETCORE.Models.DAL;
 
 namespace TallerCRUDNETCORE.Migrations
 {
     [DbContext(typeof(DbContextProducto))]
-    partial class DbContextProductoModelSnapshot : ModelSnapshot
+    [Migration("20210321205335_Clonado")]
+    partial class Clonado
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TallerCRUDNETCORE.Models.DAL;
 
 namespace TallerCRUDNETCORE.Migrations
 {
     [DbContext(typeof(DbContextProducto))]
-    partial class DbContextProductoModelSnapshot : ModelSnapshot
+    [Migration("20210321181732_Combio de Sql")]
+    partial class CombiodeSql
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,9 +60,6 @@ namespace TallerCRUDNETCORE.Migrations
 
                     b.Property<string>("Correo")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Nit")
-                        .HasColumnType("int");
 
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(max)");
