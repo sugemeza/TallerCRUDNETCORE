@@ -8,6 +8,7 @@ namespace TallerCRUDNETCORE.Models.Entidades
     public class Proveedor
     {
         public int ProveedorId { get; set; }
+        public int Nit { get; set; }
         public String Nombre { get; set; }
         public String PersonaContacto { get; set; }
         public String Correo { get; set; }
