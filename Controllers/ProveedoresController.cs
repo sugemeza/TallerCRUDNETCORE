@@ -54,7 +54,7 @@ namespace TallerCRUDNETCORE.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProveedorId,Nombre,PersonaContacto,Correo,Telefono")] Proveedor proveedor)
+        public async Task<IActionResult> Create([Bind("ProveedorId,Nit,Nombre,PersonaContacto,Correo,Telefono")] Proveedor proveedor)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace TallerCRUDNETCORE.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProveedorId,Nombre,PersonaContacto,Correo,Telefono")] Proveedor proveedor)
+        public async Task<IActionResult> Edit(int id, [Bind("ProveedorId,Nit,Nombre,PersonaContacto,Correo,Telefono")] Proveedor proveedor)
         {
             if (id != proveedor.ProveedorId)
             {
