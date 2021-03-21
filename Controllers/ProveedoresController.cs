@@ -56,12 +56,19 @@ namespace TallerCRUDNETCORE.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ProveedorId,Nit,Nombre,PersonaContacto,Correo,Telefono")] Proveedor proveedor)
         {
+            var provedorExistente = await _context.Proveedores
+               .FirstOrDefaultAsync(x => x.Nit == proveedor.Nit);
+
             if (ModelState.IsValid)
             {
-                _context.Add(proveedor);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (provedorExistente == null)
+                {
+                    _context.Add(proveedor);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
+            ViewData["error"] = "Este Nit ya existe";
             return View(proveedor);
         }
 
