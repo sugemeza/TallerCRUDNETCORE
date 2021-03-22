@@ -1,14 +1,14 @@
 ﻿@model TallerCRUDNETCORE.Models.Entidades.Producto
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear";
 }
 <h1>Ingreso de Producto</h1>
 <hr />
 <div id="containerCreate">
     <div class="d-flex justify-content-center">
         <fieldset>
-            <form asp-action="Create">
+            <form asp-action="Crear">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="Nombre" class="control-label"></label>
@@ -36,15 +36,16 @@
                     <span asp-validation-for="ProveedorId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <input type="submit" value="Crear" class="btn btn-primary" />
                 </div>
+                <a asp-action="Index" style="color: black; text-align: left;"><strong><u>Regresar a la lista</u></strong></a>
             </form>
         </fieldset>
     </div>
 </div>
 
     <div>
-        <a asp-action="Index">Regresar a la lista</a>
+        
     </div>
 
     @section Scripts {
