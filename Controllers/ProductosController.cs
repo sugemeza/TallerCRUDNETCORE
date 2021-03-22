@@ -103,7 +103,7 @@ namespace TallerCRUDNETCORE.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductoExists(producto.ProductoId))
+                    if (!ProductoExiste(producto.ProductoId))
                     {
                         return NotFound();
                     }
@@ -138,7 +138,7 @@ namespace TallerCRUDNETCORE.Controllers
         // POST: Productos/Delete/5
         [HttpPost, ActionName("Eliminar")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> EliminarConfirmado(int id)
         {
             var producto = await _context.Productos.FindAsync(id);
             _context.Productos.Remove(producto);
@@ -146,7 +146,7 @@ namespace TallerCRUDNETCORE.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProductoExists(int id)
+        private bool ProductoExiste(int id)
         {
             return _context.Productos.Any(e => e.ProductoId == id);
         }
