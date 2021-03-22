@@ -26,7 +26,7 @@ namespace TallerCRUDNETCORE.Controllers
         }
 
         // GET: Productos/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Detalles(int? id)
         {
             if (id == null)
             {
@@ -45,7 +45,7 @@ namespace TallerCRUDNETCORE.Controllers
         }
 
         // GET: Productos/Create
-        public IActionResult Create()
+        public IActionResult Crear()
         {
             return View();
         }
@@ -55,7 +55,7 @@ namespace TallerCRUDNETCORE.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductoId,Nombre,Existencia,FechaIngreso,Precio,ProveedorId")] Producto producto)
+        public async Task<IActionResult> Crear([Bind("ProductoId,Nombre,Existencia,FechaIngreso,Precio,ProveedorId")] Producto producto)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace TallerCRUDNETCORE.Controllers
         }
 
         // GET: Productos/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Editar(int? id)
         {
             if (id == null)
             {
@@ -87,7 +87,7 @@ namespace TallerCRUDNETCORE.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductoId,Nombre,Existencia,FechaIngreso,Precio,ProveedorId")] Producto producto)
+        public async Task<IActionResult> Editar(int id, [Bind("ProductoId,Nombre,Existencia,FechaIngreso,Precio,ProveedorId")] Producto producto)
         {
             if (id != producto.ProductoId)
             {
@@ -103,7 +103,7 @@ namespace TallerCRUDNETCORE.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductoExists(producto.ProductoId))
+                    if (!ProductoExiste(producto.ProductoId))
                     {
                         return NotFound();
                     }
@@ -118,7 +118,7 @@ namespace TallerCRUDNETCORE.Controllers
         }
 
         // GET: Productos/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Eliminar(int? id)
         {
             if (id == null)
             {
@@ -136,9 +136,9 @@ namespace TallerCRUDNETCORE.Controllers
         }
 
         // POST: Productos/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("Eliminar")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> EliminarConfirmado(int id)
         {
             var producto = await _context.Productos.FindAsync(id);
             _context.Productos.Remove(producto);
@@ -146,7 +146,7 @@ namespace TallerCRUDNETCORE.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProductoExists(int id)
+        private bool ProductoExiste(int id)
         {
             return _context.Productos.Any(e => e.ProductoId == id);
         }
