@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Editar";
+    ViewBag.Title = "Proveedores";
 }
 
 <h1>Editar producto</h1>
@@ -9,7 +10,7 @@
 <div id="mainContainer">
     <div class="d-flex justify-content-center">
         <fieldset>
-            <form asp-action="Edit">
+            <form asp-action="Editar">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="ProductoId" />
                 <div class="form-group">
@@ -33,8 +34,10 @@
                     <span asp-validation-for="Precio" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label"> ID proveedor</label>
-                    <input asp-for="ProveedorId" class="form-control" />
+                    <label class="control-label">Proveedor</label>
+                    <select asp-for="ProveedorId" asp-items="@(SelectList)ViewBag.ListaProveedores" class="form-control">
+                        <option>-- Seleccione el Proveedor</option>
+                    </select>
                     <span asp-validation-for="ProveedorId" class="text-danger"></span>
                 </div>
                 <div class="form-group">

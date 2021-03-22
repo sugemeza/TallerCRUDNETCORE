@@ -18,13 +18,15 @@ namespace TallerCRUDNETCORE.Models.Entidades
 
         public int Existencia { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime FechaIngreso { get; set; }
 
         public double Precio { get; set; }
 
+        [ForeignKey("ProveedorId")]
         public int ProveedorId { get; set; }
 
-        [ForeignKey("ProveedorId")]
         public virtual Proveedor Proveedor { get; set; }
 
     }

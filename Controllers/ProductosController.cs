@@ -22,7 +22,9 @@ namespace TallerCRUDNETCORE.Controllers
         // GET: Productos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Productos.ToListAsync());
+            List<Producto> productos = await _context.Productos.ToListAsync();
+            productos.ForEach(item => _context.Entry(item).Reference(x => x.Proveedor).Load());
+            return View(productos);
         }
 
         // GET: Productos/Details/5
@@ -35,7 +37,9 @@ namespace TallerCRUDNETCORE.Controllers
 
             var producto = await _context.Productos
                 .FirstOrDefaultAsync(m => m.ProductoId == id);
+
             _context.Entry(producto).Reference(x => x.Proveedor).Load();
+
             if (producto == null)
             {
                 return NotFound();
@@ -47,6 +51,8 @@ namespace TallerCRUDNETCORE.Controllers
         // GET: Productos/Create
         public IActionResult Crear()
         {
+            ViewBag.ListaProveedores = new SelectList(_context.Proveedores.ToList(), "ProveedorId", "Nombre");
+
             return View();
         }
 
@@ -75,10 +81,14 @@ namespace TallerCRUDNETCORE.Controllers
             }
 
             var producto = await _context.Productos.FindAsync(id);
+
             if (producto == null)
             {
                 return NotFound();
             }
+
+            ViewBag.ListaProveedores = new SelectList(_context.Proveedores.ToList(), "ProveedorId", "Nombre");
+
             return View(producto);
         }
 

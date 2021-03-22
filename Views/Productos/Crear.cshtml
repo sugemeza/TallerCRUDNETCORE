@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Crear";
+    ViewBag.Title = "Proveedores";
 }
 
 <h1>Ingreso de producto</h1>
@@ -32,9 +33,11 @@
                     <span asp-validation-for="Precio" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label"> ID proveedor</label>
-                    <input asp-for="ProveedorId" class="form-control" />
-                    <span asp-validation-for="ProveedorId" class="text-danger"></span>
+                    <label class="control-label">Proveedor</label>
+                    <select asp-for="ProveedorId" asp-items="@(SelectList)ViewBag.ListaProveedores" class="form-control">
+                        <option>-- Seleccione el Proveedor</option>
+                    </select>
+                    <span asp-validation-for="ProveedorId" class="text-danger" />
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Crear" class="btn btn-primary" />
