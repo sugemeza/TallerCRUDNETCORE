@@ -4,44 +4,44 @@
     ViewData["Title"] = "Editar";
 }
 
-<h1>Editar</h1>
-
-<h4>Proveedor</h4>
+<h1>Editar proveedor</h1>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Editar">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ProveedorId" />
-            <div class="form-group">
-                <label asp-for="Nit" class="control-label"></label>
-                <input asp-for="Nit" class="form-control" />
-                <span asp-validation-for="Nit" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" class="form-control" />
-                <span asp-validation-for="Nombre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PersonaContacto" class="control-label"></label>
-                <input asp-for="PersonaContacto" class="form-control" />
-                <span asp-validation-for="PersonaContacto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Correo" class="control-label"></label>
-                <input asp-for="Correo" class="form-control" />
-                <span asp-validation-for="Correo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Telefono" class="control-label"></label>
-                <input asp-for="Telefono" class="form-control" />
-                <span asp-validation-for="Telefono" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
-            </div>
-        </form>
+<div id="mainContainer">
+    <div class="d-flex justify-content-center">
+        <fieldset>
+            <form asp-action="Editar">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ProveedorId" />
+                <div class="form-group">
+                    <label asp-for="Nit" class="control-label"></label>
+                    <input asp-for="Nit" class="form-control" />
+                    <span asp-validation-for="Nit" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PersonaContacto" class="control-label"></label>
+                    <input asp-for="PersonaContacto" class="form-control" />
+                    <span asp-validation-for="PersonaContacto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Correo" class="control-label"></label>
+                    <input asp-for="Correo" class="form-control" />
+                    <span asp-validation-for="Correo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Telefono" class="control-label"></label>
+                    <input asp-for="Telefono" class="form-control" />
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                </div>
+            </form>
+        </fieldset>
     </div>
 </div>
 
@@ -52,3 +52,31 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+<style>
+
+    #mainContainer fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        position: relative;
+        min-width: 500px;
+    }
+
+    .form-group {
+        background: white;
+    }
+
+    h1 {
+        color: #364843;
+        font-family: "Arial Rounded MT";
+        font-size: 25px;
+        line-height: 30px;
+        font-weight: normal;
+        text-align: center;
+        text-shadow: 0 1px 1px #fff;
+    }
+</style>

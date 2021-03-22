@@ -3,9 +3,10 @@
 @{
     ViewData["Title"] = "Create";
 }
-<h1>Ingreso de Producto</h1>
+
+<h1>Ingreso de producto</h1>
 <hr />
-<div id="containerCreate">
+<div id="mainContainer">
     <div class="d-flex justify-content-center">
         <fieldset>
             <form asp-action="Create">
@@ -31,7 +32,7 @@
                     <span asp-validation-for="Precio" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="ProveedorId" class="control-label"></label>
+                    <label class="control-label"> ID proveedor</label>
                     <input asp-for="ProveedorId" class="form-control" />
                     <span asp-validation-for="ProveedorId" class="text-danger"></span>
                 </div>
@@ -43,9 +44,9 @@
     </div>
 </div>
 
-    <div>
+<div>
         <a asp-action="Index">Regresar a la lista</a>
-    </div>
+</div>
 
     @section Scripts {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
@@ -53,7 +54,7 @@
 
     <style>
 
-        #containerCreate fieldset {
+        #mainContainer fieldset {
             background: white;
             border: 0 none;
             border-radius: 3px;
@@ -69,10 +70,10 @@
         }
 
         h1 {
-            color: #d54d7b;
-            font-family: "Great Vibes", cursive;
-            font-size: 40px;
-            line-height: 50px;
+            color: #364843;
+            font-family: "Arial Rounded MT";
+            font-size: 25px;
+            line-height: 30px;
             font-weight: normal;
             text-align: center;
             text-shadow: 0 1px 1px #fff;
