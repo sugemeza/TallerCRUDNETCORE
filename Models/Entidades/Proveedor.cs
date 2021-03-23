@@ -13,5 +13,13 @@ namespace TallerCRUDNETCORE.Models.Entidades
         public String PersonaContacto { get; set; }
         public String Correo { get; set; }
         public String Telefono { get; set; }
+
+        public String Info
+        {
+            get
+            {
+                return " Nombre: " + Nombre + " - Contacto: " + PersonaContacto + " - Teléfono: " + Telefono;
+            }
+        }
     }
 }

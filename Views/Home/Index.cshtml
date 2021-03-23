@@ -3,7 +3,49 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Bienvenido</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <img src="~/images/bart-simpson.jpg" alt="Estilista App" width="250" height="150" />
+    <div class="contenedor">
+        <img src="~/images/BannerInicio.jpg" width="960" height="640" />
+    </div>
+    <h1 class="display-4 texto size25">Bienvenido a Estilista Web</h1>
+    <p class="texto size18">
+        <span>
+            Llevamos la belleza y el cuidado personal a domicilio
+        </span>
+        <br />
+        <span>
+            o si prefieres ir a un salón dispuesto para ti.
+        </span>
+    </p>
 </div>
+
+<style>
+    .contenedor {
+        width: 96%;
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .texto {
+        color: #364843;
+        font-family: "Arial Rounded MT";
+        line-height: 20px;
+        font-weight: normal;
+        text-align: center;
+        text-shadow: 0 1px 1px #fff;
+    }
+
+    .size25 {
+        font-size: 25px;
+        margin-top: 30px;
+    }
+
+    .size18 {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+</style>

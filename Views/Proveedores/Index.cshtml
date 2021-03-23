@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Proveedores</h1>
 
 <p>
     <a asp-action="Crear">Crear proveedor</a>
@@ -19,13 +19,13 @@
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PersonaContacto)
+                Persona de contacto
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Correo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Telefono)
+                Teléfono
             </th>
             <th></th>
         </tr>
@@ -49,9 +49,9 @@
                 @Html.DisplayFor(modelItem => item.Telefono)
             </td>
             <td>
-                <a asp-action="Editar" asp-route-id="@item.ProveedorId">Editar</a> |
-                <a asp-action="Detalles" asp-route-id="@item.ProveedorId">Detalles</a> |
-                <a asp-action="Eliminar" asp-route-id="@item.ProveedorId">Eliminar</a>
+                <a class="btn btn-primary" asp-action="Editar" asp-route-id="@item.ProveedorId">Editar</a> |
+                <a class="btn btn-info" asp-action="Detalles" asp-route-id="@item.ProveedorId">Detalles</a> |
+                <a class="btn btn-danger" asp-action="Eliminar" asp-route-id="@item.ProveedorId">Eliminar</a>
             </td>
         </tr>
 }

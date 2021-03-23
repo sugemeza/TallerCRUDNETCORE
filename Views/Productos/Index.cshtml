@@ -7,7 +7,7 @@
 <h1>Productos</h1>
 
 <p>
-    <a asp-action="Crear">Crear nuevo Producto</a>
+    <a asp-action="Crear">Crear nuevo producto</a>
 </p>
 <table class="table">
     <thead>
@@ -19,13 +19,13 @@
                 @Html.DisplayNameFor(model => model.Existencia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FechaIngreso)
+                Fecha de ingreso
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Precio)
             </th>
             <th>
-                Nombre Proveedor
+                Nombre proveedor
             </th>
         </tr>
     </thead>
@@ -48,9 +48,9 @@
                 @Html.DisplayFor(modelItem => item.Proveedor.Nombre)
             </td>
             <td>
-                <a asp-action="Editar" asp-route-id="@item.ProductoId">Editar</a> |
-                <a asp-action="Detalles" asp-route-id="@item.ProductoId">Detalles</a> |
-                <a asp-action="Eliminar" asp-route-id="@item.ProductoId">Eliminar</a>
+                <a class="btn btn-primary" asp-action="Editar" asp-route-id="@item.ProductoId">Editar</a> |
+                <a class="btn btn-info" asp-action="Detalles" asp-route-id="@item.ProductoId">Detalles</a> |
+                <a class="btn btn-danger" asp-action="Eliminar" asp-route-id="@item.ProductoId">Eliminar</a>
             </td>
         </tr>
 }
